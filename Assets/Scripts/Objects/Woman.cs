@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Woman : MonoBehaviour
 {
-    public static bool isFrameFull, hasDiary;    //相框内是否有结婚照
+    public static bool isFrameFull, hasDiary;
     public Television television;
     public Door door;
     
@@ -20,13 +20,13 @@ public class Woman : MonoBehaviour
             
             if (hasDiary)
             {
-                //阅读日记后看向男方
+                //阅读日记并看向男方的动画
                 
             }
         }
         else
         {
-            //延时30s离开房间
+            //如果没有看到延时30s离开房间
             StartCoroutine(Timer());
         }
     }
@@ -42,7 +42,7 @@ public class Woman : MonoBehaviour
     {
         //离开房间的动画
         
-        //关闭电视机
+        //电视机状态切换
         television.SwitchStatus();
     }
     
