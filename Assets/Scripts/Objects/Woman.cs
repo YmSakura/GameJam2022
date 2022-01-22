@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,13 @@ public class Woman : MonoBehaviour
     public static bool isFrameFull, hasDiary;
     public Television television;
     public Door door;
-    public Animator anim;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
 
     public void EnterRoom()
     {
@@ -47,19 +54,5 @@ public class Woman : MonoBehaviour
         //电视机状态切换
         television.SwitchStatus();
     }
-    private GameObject rb;
-    private void Awake() {
-    rb=GetComponent<GameObject>();
-    }
-    private void FixedUpdate() {
-        Move();
-    }
-    void Move(){
-        float horizontalmove=Input.GetAxisRaw("Horizontal");
-        bool on=Input.GetKey(KeyCode.W);
-        bool move=Input.GetKey(KeyCode.S);
-        anim.SetFloat("right",Mathf.Abs(horizontalmove));
-        anim.SetBool("on",on);
-        anim.SetBool("move",move);
-    }
+
 }
