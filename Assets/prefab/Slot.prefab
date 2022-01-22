@@ -91,7 +91,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotID: 0
   slotItem: {fileID: 0}
-  itemInSlot: {fileID: 0}
 --- !u!1 &7229388289263530565
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +179,7 @@ GameObject:
   - component: {fileID: 2517928173710396465}
   - component: {fileID: 305575835644573630}
   - component: {fileID: 5450889384751516443}
+  - component: {fileID: 4256344429281899386}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -283,5 +283,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3656b0d276d5a1d42aee7a13940b587a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FixedPhoto: {fileID: 11400000, guid: 54d586213a2e1c941a6d80706c2d8523, type: 2}
+  inventoryManager: {fileID: 0}
+  InfoPanel: {fileID: 3051386545323226753, guid: f1f03037e742ee64ca046a2e0d4fc2ca, type: 3}
   originalParent: {fileID: 2414118798559907016}
   inventory: {fileID: 11400000, guid: 7cf3c697c89255c4a9cc90c4cf9b1fb3, type: 2}
+--- !u!61 &4256344429281899386
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206794801211917004}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 114.583664, y: 117.48419}
+  m_EdgeRadius: 0
