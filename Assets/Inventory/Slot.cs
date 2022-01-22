@@ -9,9 +9,9 @@ public class Slot : MonoBehaviour
     public Item slotItem;           //槽位的物品
 
 
-    public GameObject itemInSlot;
+    //public GameObject itemInSlot;
 
-    public void SetupSlot(Item item)
+    /*public void SetupSlot(Item item)
     {
         if (item == null)
         {
@@ -21,5 +21,5 @@ public class Slot : MonoBehaviour
 
 
 
-    }
+    }*/
 }

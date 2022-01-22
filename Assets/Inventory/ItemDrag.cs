@@ -27,9 +27,16 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
     public void OnEndDrag(PointerEventData eventData)
     {
         GameObject pointGameObject = eventData.pointerCurrentRaycast.gameObject;
-        Transform pointFather = pointGameObject.transform.parent.parent;
-        if (pointGameObject.name.Substring(0,5) == "Image")//判断下面物体名字是：Item Image 那么互换位置
+
+        if (!pointGameObject||pointGameObject.gameObject==originalParent.gameObject)
         {
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        }
+        else if (pointGameObject.name == "Item Image")//判断下面物体名字是：Item Image 那么互换位置
+        {
+            Transform pointFather = pointGameObject.transform.parent.parent;
+            
             transform.SetParent(pointFather);
             transform.position = pointFather.position;
             //itemList的物品存储位置改变
@@ -52,7 +59,11 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
             inventory.itemList[pointGameObject.GetComponentInParent<Slot>().slotID] = inventory.itemList[currentItemID];
             inventory.itemList[currentItemID] = null;
         }
-
+        else
+        {
+            transform.SetParent(originalParent);
+            transform.position = originalParent.position;
+        }
         
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
