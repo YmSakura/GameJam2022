@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5005757e0e4592548a81ea80d5c4b0cb, type: 3}
   m_Name: Frame
   m_EditorClassIdentifier: 
-  itemName: Frame
+  itemName: "\u76F8\u6846"
   itemImage: {fileID: -6105620200155009639, guid: af7c6a789efc394488ead7fb4158354b, type: 3}
-  itemInfo: 
+  itemInfo: "\u76F8\u6846\u91CC\u4E4B\u524D\u88C5\u7684\u7167\u7247\u5DF2\u7ECF\u88AB\u6495\u788E\u4E86\u2026\uFF08\u600E\u4E48\u611F\u89C9\u76F8\u6846\u80CC\u540E\u6478\u8D77\u6765\u602A\u602A\u7684\uFF1F"
