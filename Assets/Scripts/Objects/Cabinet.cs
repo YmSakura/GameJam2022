@@ -5,24 +5,22 @@ using UnityEngine;
 
 public class Cabinet : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
     private Animator animator;
-    public Sprite openSprite, closeSprite;
+    public GameObject dialog4;
     private bool isOpen;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         animator.SetBool("isOpen", isOpen);
     }
-
-    void OpenCabinet()
+    
+    private void OnMouseDown()
     {
-        spriteRenderer.sprite = openSprite;
+        dialog4.SetActive(true);
     }
 }

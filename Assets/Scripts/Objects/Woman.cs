@@ -10,6 +10,7 @@ public class Woman : MonoBehaviour
     
     public void EnterRoom()
     {
+        Debug.Log("女主进门");
         //进入房间的动画
         door.isOpen = true;
         

@@ -19,18 +19,9 @@ public class Calendar : MonoBehaviour
 
     private void Update()
     {
-        if (!dialog3.activeSelf)
-        {
-            isBig = false;
-        }
         animator.SetBool("isBig", isBig);
     }
 
-    public void StayBig()
-    {
-        isBig = true;
-    }
-    
     //计时结束后发光
     public void Open()
     {
@@ -40,7 +31,7 @@ public class Calendar : MonoBehaviour
     //协程计时器
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Flash();
     }
     
@@ -56,8 +47,20 @@ public class Calendar : MonoBehaviour
     private void OnMouseDown()
     {
         spriteRenderer.material = defaultMaterial;
-        isBig = true;
         dialog2.SetActive(false);
+        isBig = true;
+    }
+
+    public void OpenDialog()
+    {
         dialog3.SetActive(true);
+    }
+
+    public void CloseDialog()
+    {
+        if (!dialog3.activeSelf)
+        {
+            isBig = false;
+        }
     }
 }

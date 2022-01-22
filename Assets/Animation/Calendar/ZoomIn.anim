@@ -347,7 +347,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.33333334
-    functionName: StayBig
+    functionName: OpenDialog
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

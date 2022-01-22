@@ -5,27 +5,25 @@ using UnityEngine;
 
 public class Television : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    public Sprite offSprite, onSprite;
     public Woman woman;
+    private Animator animator;
+    private bool isOpen;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        
+        animator.SetBool("isOpen", isOpen);
     }
     
     //鼠标点击->女进门->判断是否有结婚照->
-
     private void OnMouseDown()
     {
         //切换电视机状态
-        //spriteRenderer.sprite = onSprite;
+        isOpen = true;
         //女主进门
         woman.EnterRoom();
     }
@@ -33,6 +31,8 @@ public class Television : MonoBehaviour
     //关闭电视机
     public void SwitchStatus()
     {
-        spriteRenderer.sprite = offSprite;
+        isOpen = false;
     }
+    
+    
 }
