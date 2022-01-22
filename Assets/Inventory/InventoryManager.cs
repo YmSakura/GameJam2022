@@ -24,11 +24,14 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             if (inventory.itemList[i] == null)  //如果列表当前元素为空,则失活按钮取消显示
-                slots[i].SetActive(false);
+                slots[i].transform.GetChild(0).gameObject.SetActive(false);
             else                                //如果列表当前元素为空,则复制相关信息
             {
-                slots[i].SetActive(true);
-                Image image = slots[i].GetComponentInChildren<Image>();
+                slots[i].transform.GetChild(0).gameObject.SetActive(true);
+                Debug.Log(i.ToString());
+                Debug.Log(slots[i].transform.GetChild(0).gameObject.name);
+                Debug.Log(slots[i].transform.GetChild(0).GetComponentInChildren<Image>().gameObject.name);
+                Image image = slots[i].transform.GetChild(0).GetComponentInChildren<Image>();
                 image.sprite = inventory.itemList[i].itemImage;
             }
         }

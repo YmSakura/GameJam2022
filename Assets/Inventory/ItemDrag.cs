@@ -28,7 +28,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
     {
         GameObject pointGameObject = eventData.pointerCurrentRaycast.gameObject;
         Transform pointFather = pointGameObject.transform.parent.parent;
-        if (pointGameObject.name.Substring(0,5) == "Image")//判断下面物体名字是：Item Image 那么互换位置
+        if (pointGameObject.name == "Item Image")//判断下面物体名字是：Item Image 那么互换位置
         {
             transform.SetParent(pointFather);
             transform.position = pointFather.position;
