@@ -25,11 +25,12 @@ public class Television : MonoBehaviour
     private void OnMouseDown()
     {
         //切换电视机状态
-        spriteRenderer.sprite = onSprite;
+        //spriteRenderer.sprite = onSprite;
         //女主进门
         woman.EnterRoom();
     }
 
+    //关闭电视机
     public void SwitchStatus()
     {
         spriteRenderer.sprite = offSprite;

@@ -5,18 +5,59 @@ using UnityEngine;
 
 public class Calendar : MonoBehaviour
 {
-    private SpriteRenderer _spriteRenderer; //用于获取material
-    public Material _material;              //普通的材质，用于替换
+    private SpriteRenderer spriteRenderer;              //用于获取material
+    private Animator animator;
+    public Material defaultMaterial, flashMaterial;     //普通的材质，用于替换
+    public GameObject dialog2, dialog3;
+    private bool isBig;
 
     private void Awake()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (!dialog3.activeSelf)
+        {
+            isBig = false;
+        }
+        animator.SetBool("isBig", isBig);
+    }
+
+    public void StayBig()
+    {
+        isBig = true;
     }
     
-    //点击之后更改材质为默认材质
+    //计时结束后发光
+    public void Open()
+    {
+        StartCoroutine(Timer());
+    }
+
+    //协程计时器
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(2f);
+        Flash();
+    }
+    
+    //切换为发光材质
+    public void Flash()
+    {
+        spriteRenderer.material = flashMaterial;
+        //触发对话框
+        dialog2.SetActive(true);
+    }
+    
+    //点击之后切换默认材质
     private void OnMouseDown()
     {
-        _spriteRenderer.material = _material;
-        //触发对话框
+        spriteRenderer.material = defaultMaterial;
+        isBig = true;
+        dialog2.SetActive(false);
+        dialog3.SetActive(true);
     }
 }

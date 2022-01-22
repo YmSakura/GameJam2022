@@ -1,18 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Cabinet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    public Sprite openSprite, closeSprite;
+    private bool isOpen;
+
+    private void Awake()
     {
-        
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        animator.SetBool("isOpen", isOpen);
+    }
+
+    void OpenCabinet()
+    {
+        spriteRenderer.sprite = openSprite;
     }
 }
