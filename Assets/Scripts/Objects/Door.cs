@@ -3,26 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cabinet : MonoBehaviour
+public class Door : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
     public Sprite openSprite, closeSprite;
-    private bool isOpen;
+    private Animator animator;
+    public bool isOpen;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
-
+    
     private void Update()
     {
-        animator.SetBool("isOpen", isOpen);
+        animator.SetBool("isOpen",isOpen);
     }
 
-    void OpenCabinet()
+    void OpenDoor()
     {
         spriteRenderer.sprite = openSprite;
+    }
+
+    void CloseDoor()
+    {
+        spriteRenderer.sprite = closeSprite;
     }
 }
