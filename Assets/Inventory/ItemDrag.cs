@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Item FixedPhoto;
-    public InventoryManager inventoryManager;
+    //public InventoryManager inventoryManager;
     public GameObject InfoPanel;                    //物品说明提示界面
     public Transform originalParent;
     public Inventory inventory;
@@ -23,7 +24,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
     {
         var item = inventory.itemList[gameObject.transform.parent.GetComponent<Slot>().slotID];
         InfoPanel.SetActive(true);
-        InfoPanel.transform.GetChild(0).GetComponentInChildren<Text>().text = 
+        InfoPanel.GetComponentInChildren<TextMeshProUGUI>().text = 
             "物品名称:" + item.itemName + "\n" + "物品介绍:" + item.itemInfo;
     }
 
@@ -66,7 +67,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
                 inventory.itemList[currentItemID] = null;
                 originalParent.GetChild(0).gameObject.SetActive(false);
                 inventory.itemList[targetID] = FixedPhoto;
-                inventoryManager.RefreshSlot();
+                InventoryManager.iInstance.RefreshSlot();
                 GetComponent<CanvasGroup>().blocksRaycasts = true;
                 return;
             }
@@ -78,7 +79,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
             targetID = pointGameObject.GetComponentInParent<Slot>().slotID;
             //交换背包列表中的内容
             (inventory.itemList[currentItemID], inventory.itemList[targetID]) = (inventory.itemList[targetID], inventory.itemList[currentItemID]);
-            
+            InventoryManager.iInstance.RefreshSlot();
             GetComponent<CanvasGroup>().blocksRaycasts = true;//射线阻挡开启，不然无法再次选中移动的物品
             return;
         }
@@ -93,6 +94,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
             //itemList的物品存储位置改变
             inventory.itemList[pointGameObject.GetComponentInParent<Slot>().slotID] = inventory.itemList[currentItemID];
             inventory.itemList[currentItemID] = null;
+            InventoryManager.iInstance.RefreshSlot();
         }
         else
             resetPosition();

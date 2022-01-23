@@ -8,13 +8,13 @@ public class InteractableObjects : MonoBehaviour,IPointerDownHandler
 {
     public Inventory inventory;         //获取背包
     public Item thisItem;               //当前物品
-    public InventoryManager inventoryManager;
+
     
     public void OnPointerDown(PointerEventData eventData)
     {
         if (AddItem())
         {
-            inventoryManager.RefreshSlot();
+            InventoryManager.iInstance.RefreshSlot();
             Destroy(gameObject);//添加成功，删除当前物品
         }
 
