@@ -9,7 +9,7 @@ public class ManAtNow : MonoBehaviour
     public Item Flower, Diary;
     private Animator animator;
     public GameObject woman, hug;
-    private static bool hasDiary, hasFlower, atNow;
+    public static bool hasDiary, hasFlower, atNow;
 
     private void Awake()
     {

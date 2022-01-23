@@ -111,6 +111,18 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
             resetPosition();
             InventoryManager.iInstance.RefreshSlot();
         }
+        else if (pointGameObject.name== "ManAtNow")
+        {
+            
+            if (originalSlot.slotItem.itemName == "日记本")
+            {
+                Debug.Log("交互成功");
+                ManAtNow.hasDiary = true;
+                inventory.itemList[originalSlot.slotID] = null;
+            }
+            resetPosition();
+            InventoryManager.iInstance.RefreshSlot();
+        }
         else if (pointGameObject.name.Substring(0, 5) == "Woman")
         {
             if (originalSlot.slotItem.itemName == "日记本")
