@@ -10,6 +10,8 @@ public class Woman : MonoBehaviour
     public Television television;
     public Door door;
     private Animator anim;
+    public Inventory inventory;
+    public Item Frame, Diary;
 
     private void Update()
     {
@@ -17,13 +19,20 @@ public class Woman : MonoBehaviour
         anim.SetBool("isIn", isIn);
         anim.SetBool("isFrameFull", isFrameFull);
         anim.SetBool("hasDiary", hasDiary);
+
+        if (inventory.itemList.Contains(Frame))
+            isFrameFull = true;
+        if (inventory.itemList.Contains(Diary))
+            hasDiary = true;
+
     }
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
     }
-
+    
+    
     //由Door调用，门开后进入
     public void EnterRoom()
     {

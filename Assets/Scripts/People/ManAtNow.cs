@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ManAtNow : MonoBehaviour
 {
+    public Inventory inventory;
+    public Item Flower, Diary;
     private Animator animator;
     private static bool hasDiary, hasFlower;
 
@@ -15,6 +17,8 @@ public class ManAtNow : MonoBehaviour
 
     private void Update()
     {
+        if (inventory.itemList.Contains(Flower))
+            hasFlower = true;
         animator.SetBool("hasFlower",hasFlower);
     }
 
