@@ -20,6 +20,7 @@ public class Television : MonoBehaviour
         animator.SetBool("isOpen", isOpen);
     }
     
+    //鼠标点击电视时开启电视，打开门
     private void OnMouseDown()
     {
         //切换电视机状态

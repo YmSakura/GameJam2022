@@ -24,22 +24,20 @@ public class Woman : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-
+    //由Door调用，门开后进入
     public void EnterRoom()
     {
-        Debug.Log("女主进门");
+        Debug.Log("进入房间");
         //进入房间的动画
         isIn = true;
         
-
-        //判断是否看到完整的结婚照
         if (isFrameFull)
         {
-            
+            Debug.Log("看到了完整的结婚照");
         }
         else
         {
-            //如果没有看到延时30s离开房间
+            //如果没有看到则延时离开房间
             StartCoroutine(Timer());
         }
     }
@@ -47,29 +45,33 @@ public class Woman : MonoBehaviour
     //协程计时器
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(5f);
-        ExitRoom();
+        Debug.Log("停留房间");
+        yield return new WaitForSeconds(10f);
+        Moveout();
     }
 
-    void ExitRoom()
+    void Moveout()
     {
+        Debug.Log("离开房间");
         //离开房间的动画
         isLeave = true;
-        //电视机状态切换
-        television.SwitchStatus();
     }
+    
 
     //取消进入状态，在moveIn动画中调用
-    void LeaveRoom()
+    void StayAtRoom()
     {
         isIn = false;
     }
     
     //关门，在moveOut动画结束时调用
-    void CloseDoor()
+    void ExitRoom()
     {
         gameObject.SetActive(false);
         //关门
         door.isOpen = false;
+        //电视机状态切换
+        television.SwitchStatus();
+        isLeave = false;
     }
 }
