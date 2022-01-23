@@ -50,6 +50,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
     {
         transform.position = eventData.position;                //图片跟随鼠标移动
         Debug.Log(eventData.pointerCurrentRaycast.gameObject.name);     //输出鼠标当前位置下到第一个碰到到物体名字
+        //Debug.Log("当前:"+originalSlot.slotItem.itemName);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -98,31 +99,35 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
             inventory.itemList[currentItemID] = null;
             InventoryManager.iInstance.RefreshSlot();
         }
-        else if (pointGameObject.name== "ManAtPass")
+        else if (pointGameObject.name== "ManAtPast")
         {
+            
             if (originalSlot.slotItem.itemName == "花束")
             {
+                Debug.Log("交互成功");
                 ManAtPast.hasFlower = true;
                 inventory.itemList[originalSlot.slotID] = null;
-                InventoryManager.iInstance.RefreshSlot();
             }
             resetPosition();
+            InventoryManager.iInstance.RefreshSlot();
         }
         else if (pointGameObject.name.Substring(0, 5) == "Woman")
         {
             if (originalSlot.slotItem.itemName == "日记本")
             {
+                Debug.Log("交互成功");
                 Woman.hasDiary = true;
                 inventory.itemList[originalSlot.slotID] = null;
-                InventoryManager.iInstance.RefreshSlot();
             }
             else if (originalSlot.slotItem.itemName.Substring(0, 3) == "完整的")
             {
+                Debug.Log("交互成功");
                 Woman.isFrameFull = true;
                 inventory.itemList[originalSlot.slotID] = null;
-                InventoryManager.iInstance.RefreshSlot();
+                
             }
             resetPosition();
+            InventoryManager.iInstance.RefreshSlot();
         }
         else
             resetPosition();
