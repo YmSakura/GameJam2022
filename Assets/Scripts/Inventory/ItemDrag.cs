@@ -106,6 +106,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
                 inventory.itemList[originalSlot.slotID] = null;
                 InventoryManager.iInstance.RefreshSlot();
             }
+            resetPosition();
         }
         else if (pointGameObject.name.Substring(0, 5) == "Woman")
         {
@@ -121,6 +122,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
                 inventory.itemList[originalSlot.slotID] = null;
                 InventoryManager.iInstance.RefreshSlot();
             }
+            resetPosition();
         }
         else
             resetPosition();
