@@ -47,7 +47,7 @@ public class Woman : MonoBehaviour
     //协程计时器
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(5f);
         ExitRoom();
     }
 
@@ -57,12 +57,19 @@ public class Woman : MonoBehaviour
         isLeave = true;
         //电视机状态切换
         television.SwitchStatus();
-        //关门
-        door.isOpen = false;
     }
 
+    //取消进入状态，在moveIn动画中调用
     void LeaveRoom()
     {
         isIn = false;
+    }
+    
+    //关门，在moveOut动画结束时调用
+    void CloseDoor()
+    {
+        gameObject.SetActive(false);
+        //关门
+        door.isOpen = false;
     }
 }

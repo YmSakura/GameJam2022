@@ -31,7 +31,7 @@ public class Calendar : MonoBehaviour
     //协程计时器
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Flash();
     }
     

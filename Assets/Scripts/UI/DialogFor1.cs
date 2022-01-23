@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Dialog2 : MonoBehaviour
+public class DialogFor1 : MonoBehaviour
 {
     public TextMeshProUGUI textContent;
     public TextAsset textFile;
     public Calendar calendar;
-    public float textSpeed;     //打字机速度
-    private bool cancelTyping;  //是否取消打字机效果
-    private bool textFinished;  //是否完成typing
-    List<string> textList = new List<string>(); //用来存放每一行的文本内容
-    private int index;          //数组的下标即行数
+    public float textSpeed;                         //打字机速度
+    private bool cancelTyping;                      //是否取消打字机效果
+    private bool textFinished;                      //是否完成typing
+    List<string> textList = new List<string>();     //用来存放每一行的文本内容
+    private int index;                              //数组的下标即行数
 
     void Awake()
     {
@@ -73,6 +73,8 @@ public class Dialog2 : MonoBehaviour
         {
             index = 0;
             gameObject.SetActive(false);
+            //2s后日历发光
+            calendar.Open();
             return;
         }
         

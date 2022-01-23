@@ -19,6 +19,7 @@ public class Door : MonoBehaviour
         animator.SetBool("isOpen",isOpen);
     }
     
+    //在open动画结束时调用
     void IntoRoom()
     {
         woman.gameObject.SetActive(true);
