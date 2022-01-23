@@ -8,6 +8,7 @@ public class ManAtNow : MonoBehaviour
     public Inventory inventory;
     public Item Flower, Diary;
     private Animator animator;
+    public GameObject woman, hug;
     private static bool hasDiary, hasFlower;
 
     private void Awake()
@@ -20,6 +21,12 @@ public class ManAtNow : MonoBehaviour
         if (inventory.itemList.Contains(Flower))
             hasFlower = true;
         animator.SetBool("hasFlower",hasFlower);
+        if (Woman.isWatchingMan && hasFlower)
+        {
+            gameObject.SetActive(false);
+            woman.SetActive(false);
+            hug.SetActive(true);
+        }
     }
 
     private void ThrowDiary()

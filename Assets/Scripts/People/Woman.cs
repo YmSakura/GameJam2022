@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Woman : MonoBehaviour
 {
-    public static bool isFrameFull, hasDiary;
+    public static bool isFrameFull, hasDiary, isWatchingMan;
     private bool isLeave,isIn;
     public Television television;
     public Door door;
@@ -19,6 +19,7 @@ public class Woman : MonoBehaviour
         anim.SetBool("isIn", isIn);
         anim.SetBool("isFrameFull", isFrameFull);
         anim.SetBool("hasDiary", hasDiary);
+        anim.SetBool("isWatchingMan", isWatchingMan);
 
         if (inventory.itemList.Contains(Frame))
             isFrameFull = true;
@@ -82,5 +83,10 @@ public class Woman : MonoBehaviour
         //电视机状态切换
         television.SwitchStatus();
         isLeave = false;
+    }
+
+    void ReadyForMan()
+    {
+        isWatchingMan = true;
     }
 }
