@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    public Sprite openSprite, closeSprite;
     private Animator animator;
+    public Woman woman;
     public bool isOpen;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
     
@@ -20,14 +18,11 @@ public class Door : MonoBehaviour
     {
         animator.SetBool("isOpen",isOpen);
     }
-
-    void OpenDoor()
+    
+    void IntoRoom()
     {
-        spriteRenderer.sprite = openSprite;
-    }
-
-    void CloseDoor()
-    {
-        spriteRenderer.sprite = closeSprite;
+        woman.gameObject.SetActive(true);
+        //女主进门
+        woman.EnterRoom();
     }
 }
