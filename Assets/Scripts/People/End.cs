@@ -8,6 +8,7 @@ public class End : MonoBehaviour
     public Room room;
     public Door door;
     public Calendar calendar;
+    public GameObject endPanel;
 
     void ClosePast()
     {
@@ -15,5 +16,11 @@ public class End : MonoBehaviour
         door.isOpen = false;
         manAtPast.SetActive(false);
         calendar.gameObject.SetActive(false);
+        Invoke("OpenPanel", 1f);
+    }
+
+    void OpenPanel()
+    {
+        endPanel.SetActive(true);
     }
 }

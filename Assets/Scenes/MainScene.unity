@@ -521,6 +521,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487989138, guid: 930706edb8a0c774d960df0598d630d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2338047284482133739, guid: 930706edb8a0c774d960df0598d630d6, type: 3}
       propertyPath: calendar
       value: 
@@ -1464,7 +1468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 7cf3c697c89255c4a9cc90c4cf9b1fb3, type: 2}
-  thisItem: {fileID: 11400000, guid: 7c424d13fee449a4da4ca3374c8f7749, type: 2}
+  thisItem: {fileID: 0}
 --- !u!60 &1369851780
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1691,6 +1695,7 @@ MonoBehaviour:
   room: {fileID: 374779039}
   door: {fileID: 355673368}
   calendar: {fileID: 411452231}
+  endPanel: {fileID: 1487989138}
 --- !u!95 &1378964607
 Animator:
   serializedVersion: 3
@@ -1732,7 +1737,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 4.54, y: 5.42}
     newSize: {x: 4.54, y: 5.42}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2145,6 +2150,11 @@ PolygonCollider2D:
       - {x: -4.3199997, y: -4.25}
       - {x: -4.23, y: -4.0899997}
       - {x: -4, y: -3.6599998}
+--- !u!1 &1487989138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1487989138, guid: 930706edb8a0c774d960df0598d630d6, type: 3}
+  m_PrefabInstance: {fileID: 362473161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1853523417 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1206765530826836884, guid: 39eaac89b7356e248b5ef4fcea2cb277, type: 3}
