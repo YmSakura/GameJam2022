@@ -7,6 +7,7 @@ public class Television : MonoBehaviour
 {
     public Woman woman;
     private Animator animator;
+    public Door door;
     private bool isOpen;
 
     private void Awake()
@@ -19,13 +20,11 @@ public class Television : MonoBehaviour
         animator.SetBool("isOpen", isOpen);
     }
     
-    //鼠标点击->女进门->判断是否有结婚照->
     private void OnMouseDown()
     {
         //切换电视机状态
         isOpen = true;
-        //女主进门
-        woman.EnterRoom();
+        door.isOpen = true;
     }
 
     //关闭电视机
