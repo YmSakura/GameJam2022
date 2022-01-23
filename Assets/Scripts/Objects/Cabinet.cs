@@ -6,8 +6,8 @@ using UnityEngine;
 public class Cabinet : MonoBehaviour
 {
     private Animator animator;
-    public GameObject dialog4;
-    private bool isOpen;
+    public GameObject dialog4,dialog7;
+    public static bool isOpen, hasKey;
 
     private void Awake()
     {
@@ -21,6 +21,13 @@ public class Cabinet : MonoBehaviour
     
     private void OnMouseDown()
     {
-        dialog4.SetActive(true);
+        if (hasKey)
+        {
+            dialog7.SetActive(true);
+        }
+        else
+        {
+            dialog4.SetActive(true);
+        }
     }
 }
