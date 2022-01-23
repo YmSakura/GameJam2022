@@ -12,6 +12,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
     //public InventoryManager inventoryManager;
     public GameObject InfoPanel;                    //物品说明提示界面
     public Transform originalParent;
+    public Slot originalSlot;
     public Inventory inventory;
     private int currentItemID;//当前物品ID
 
@@ -38,7 +39,8 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
     public void OnBeginDrag(PointerEventData eventData)
     {
         originalParent = transform.parent;                          //设置原始父级,记录原始槽位
-        currentItemID = originalParent.GetComponent<Slot>().slotID; //记录当前位置ID
+        originalSlot = originalParent.GetComponent<Slot>();
+        currentItemID = originalSlot.slotID; //记录当前位置ID
         transform.SetParent(originalParent.parent);                 //设置成槽位父级防止图片被槽位图像遮挡
         transform.position = eventData.position;            //物品跟随鼠标移动
         GetComponent<CanvasGroup>().blocksRaycasts = false;         //射线阻挡关闭
@@ -95,6 +97,30 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
             inventory.itemList[pointGameObject.GetComponentInParent<Slot>().slotID] = inventory.itemList[currentItemID];
             inventory.itemList[currentItemID] = null;
             InventoryManager.iInstance.RefreshSlot();
+        }
+        else if (pointGameObject.name== "ManAtPass")
+        {
+            if (originalSlot.slotItem.itemName == "花束")
+            {
+                ManAtPast.hasFlower = true;
+                inventory.itemList[originalSlot.slotID] = null;
+                InventoryManager.iInstance.RefreshSlot();
+            }
+        }
+        else if (pointGameObject.name.Substring(0, 5) == "Woman")
+        {
+            if (originalSlot.slotItem.itemName == "日记本")
+            {
+                Woman.hasDiary = true;
+                inventory.itemList[originalSlot.slotID] = null;
+                InventoryManager.iInstance.RefreshSlot();
+            }
+            else if (originalSlot.slotItem.itemName.Substring(0, 3) == "完整的")
+            {
+                Woman.isFrameFull = true;
+                inventory.itemList[originalSlot.slotID] = null;
+                InventoryManager.iInstance.RefreshSlot();
+            }
         }
         else
             resetPosition();

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5005757e0e4592548a81ea80d5c4b0cb, type: 3}
   m_Name: FrameWithPhoto
   m_EditorClassIdentifier: 
-  itemName: "\u5B8C\u6574\u7684\u7167\u7247"
+  itemName: "\u5B8C\u6574\u7684\u76F8\u6846"
   itemImage: {fileID: 21300000, guid: c7b5f5657990cd74d98b0a0d4abb340d, type: 3}
   itemInfo: 
