@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Photo
   m_EditorClassIdentifier: 
   itemName: "\u7ED3\u5A5A\u7167"
-  itemImage: {fileID: 101864526576870813, guid: fce83361164c5d8438324846c81af22f, type: 3}
+  itemImage: {fileID: -646209651387058465, guid: 315af8e479493094c870764660bc5f1b, type: 3}
   itemInfo: "\u4E00\u5F20\u5F88\u6709\u5E74\u4EE3\u611F\u7684\u7ED3\u5A5A\u7167"

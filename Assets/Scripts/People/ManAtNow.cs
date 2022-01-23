@@ -10,6 +10,7 @@ public class ManAtNow : MonoBehaviour
     private Animator animator;
     public GameObject woman, hug;
     public static bool hasDiary, hasFlower, atNow;
+    public GameObject dialog5;
 
     private void Awake()
     {
@@ -18,9 +19,9 @@ public class ManAtNow : MonoBehaviour
 
     private void Update()
     {
-        /*if (inventory.itemList.Contains(Flower))
-            hasFlower = true;*/
+        hasFlower = ManAtPast.hasFlower;
         animator.SetBool("hasFlower",hasFlower);
+        animator.SetBool("hasDiary", hasDiary);
         if (Woman.isWatchingMan && hasFlower)
         {
             gameObject.SetActive(false);
@@ -31,9 +32,13 @@ public class ManAtNow : MonoBehaviour
 
     private void ThrowDiary()
     {
-        //丢掉日记的动画
-        
-        //日记进入背包
-        
+        hasDiary = false;
     }
+
+    public void OpenDialog()
+    {
+        dialog5.SetActive(true);
+    }
+    
+    
 }

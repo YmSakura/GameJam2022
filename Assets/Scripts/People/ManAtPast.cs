@@ -17,8 +17,6 @@ public class ManAtPast : MonoBehaviour
 
     private void Update()
     {
-        /*if (inventory.itemList.Contains(Flower))
-            hasFlower = true;*/
         animator.SetBool("hasFlower",hasFlower);
     }
 }

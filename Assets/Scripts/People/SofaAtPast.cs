@@ -17,12 +17,7 @@ public class SofaAtPast : MonoBehaviour
         selfScenePosition = Camera.main.WorldToScreenPoint(myTransform.position); 
         print("scenePosition:" + selfScenePosition);
     }
-
-    private void Update()
-    {
-        
-    }
-
+    
     void OnMouseDrag() //鼠标拖拽时系统自动调用该方法
     {
         //获取拖拽点鼠标坐标

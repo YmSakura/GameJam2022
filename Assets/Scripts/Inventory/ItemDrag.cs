@@ -131,7 +131,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
                 Woman.hasDiary = true;
                 inventory.itemList[originalSlot.slotID] = null;
             }
-            else if (originalSlot.slotItem.itemName.Substring(0, 3) == "完整的")
+            else if (originalSlot.slotItem.itemName.Substring(0, 2) == "完整")
             {
                 Debug.Log("交互成功");
                 Woman.isFrameFull = true;
