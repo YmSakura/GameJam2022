@@ -98,7 +98,7 @@ public class ItemDrag : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragH
             inventory.itemList[currentItemID] = null;
             InventoryManager.iInstance.RefreshSlot();
         }
-        else if (pointGameObject.name== "ManAtPass")
+        else if (pointGameObject.name== "ManAtPast")
         {
             if (originalSlot.slotItem.itemName == "花束")
             {

@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 6594862464928849757}
   - component: {fileID: 2473803287492695546}
   - component: {fileID: 4972727759168605318}
-  - component: {fileID: 7357928706836453840}
+  - component: {fileID: 222370550}
   m_Layer: 5
   m_Name: Dialog6
   m_TagString: Untagged
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7357928706836453840
+--- !u!114 &222370550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -764,12 +764,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4822378136886024331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c89d1bea4a5cc43bf94e464d3f2a29, type: 3}
+  m_Script: {fileID: 11500000, guid: 9acbc67c362e593408d786fab2b0cf3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textContent: {fileID: 2967170977454566138}
-  textFile: {fileID: 4900000, guid: c3511e8276c103744a22959b1574ea67, type: 3}
-  textSpeed: 0.2
+  inventory: {fileID: 11400000, guid: 7cf3c697c89255c4a9cc90c4cf9b1fb3, type: 2}
+  keys: {fileID: 11400000, guid: e244b15f9ffd3654e95cd256ed3b32cf, type: 2}
 --- !u!1 &5285221531666507377
 GameObject:
   m_ObjectHideFlags: 0

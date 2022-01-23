@@ -19,12 +19,12 @@ public class Woman : MonoBehaviour
         anim.SetBool("isIn", isIn);
         anim.SetBool("isFrameFull", isFrameFull);
         anim.SetBool("hasDiary", hasDiary);
-        anim.SetBool("isWatchingMan", isWatchingMan);
 
-        if (inventory.itemList.Contains(Frame))
+        /*if (inventory.itemList.Contains(Frame))
             isFrameFull = true;
         if (inventory.itemList.Contains(Diary))
             hasDiary = true;
+            */
 
     }
 

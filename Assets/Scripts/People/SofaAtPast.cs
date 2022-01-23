@@ -20,12 +20,7 @@ public class SofaAtPast : MonoBehaviour
 
     private void Update()
     {
-        if (myTransform.position.x < -1.5f)
-        {
-            gameObject.SetActive(false);
-            sofaAtNow.transform.position = myTransform.position;
-            sofaAtNow.SetActive(true);
-        }
+        
     }
 
     void OnMouseDrag() //鼠标拖拽时系统自动调用该方法
@@ -38,5 +33,12 @@ public class SofaAtPast : MonoBehaviour
         Vector3 currentWorldPosition = Camera.main.ScreenToWorldPoint(currentScenePosition); 
         //设置对象位置为鼠标的世界位置
         myTransform.position = currentWorldPosition;
+        
+        if (myTransform.position.x < -1.5f)
+        {
+            gameObject.SetActive(false);
+            sofaAtNow.transform.position = myTransform.position;
+            sofaAtNow.SetActive(true);
+        }
     }
 }

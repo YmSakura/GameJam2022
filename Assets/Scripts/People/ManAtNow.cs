@@ -9,7 +9,7 @@ public class ManAtNow : MonoBehaviour
     public Item Flower, Diary;
     private Animator animator;
     public GameObject woman, hug;
-    private static bool hasDiary, hasFlower;
+    private static bool hasDiary, hasFlower, atNow;
 
     private void Awake()
     {
@@ -18,8 +18,8 @@ public class ManAtNow : MonoBehaviour
 
     private void Update()
     {
-        if (inventory.itemList.Contains(Flower))
-            hasFlower = true;
+        /*if (inventory.itemList.Contains(Flower))
+            hasFlower = true;*/
         animator.SetBool("hasFlower",hasFlower);
         if (Woman.isWatchingMan && hasFlower)
         {
